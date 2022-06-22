@@ -14,6 +14,11 @@ function Header() {
             About
           </NavLink>
         )}
+        {isUserLoggedIn && (
+          <NavLink className={css.navLink} to='/contact'>
+            Contact
+          </NavLink>
+        )}
         {!isUserLoggedIn && (
           <NavLink className={css.navLink} to='/login'>
             Login
