@@ -4,7 +4,7 @@ import css from './Header.module.css';
 
 function Header() {
   // useContext ir pagal isLoggedin rodom arba nerodom
-  const { isUserLoggedIn } = useAuthCtx();
+  const { isUserLoggedIn, logout } = useAuthCtx();
 
   return (
     <header className={css.header}>
@@ -25,7 +25,7 @@ function Header() {
           </NavLink>
         )}
         {isUserLoggedIn && (
-          <NavLink className={css.navLink} to='/logout'>
+          <NavLink onClick={logout} className={css.navLink} to='/login'>
             Logout
           </NavLink>
         )}

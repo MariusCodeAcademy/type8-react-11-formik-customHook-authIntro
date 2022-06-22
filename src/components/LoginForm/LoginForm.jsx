@@ -9,7 +9,7 @@ const initValues = {
   email: 'eve.holt@reqres.in',
   password: '12345',
 };
-function LoginForm() {
+function LoginForm(props) {
   const { login } = useContext(AuthContext);
   const formik = useFormik({
     initialValues: initValues,
@@ -29,6 +29,7 @@ function LoginForm() {
       // klaidos nera ir turim token
       // login() is kontexto ir paduosim token
       login(result.token);
+      props.onSuccessLogin();
       console.log('result ===', result);
     },
   });
