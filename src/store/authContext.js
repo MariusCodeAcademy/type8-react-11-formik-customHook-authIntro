@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 export const AuthContext = createContext({
   login() {},
@@ -29,3 +29,8 @@ function AuthProvider(props) {
 }
 
 export default AuthProvider;
+
+// custom hook for context
+export function useAuthCtx() {
+  return useContext(AuthContext);
+}
