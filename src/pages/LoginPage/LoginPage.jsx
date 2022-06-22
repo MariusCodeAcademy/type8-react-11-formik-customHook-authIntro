@@ -6,7 +6,6 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 function LoginPage(props) {
   const history = useHistory();
   function handleSuccessLogin() {
-    // TODO: redirect to about
     history.replace('/about');
   }
 
