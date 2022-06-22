@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 export const AuthContext = createContext({
   login() {},
   logout() {},
-  token: '',
+  isUserLoggedIn: '',
 });
 
 AuthContext.displayName = 'AuthContext';
@@ -12,7 +12,7 @@ function AuthProvider(props) {
   const [token, setToken] = useState(null);
   // infered value / calculated value
   const isUserLoggedIn = !!token;
-
+  console.log('isUserLoggedIn ===', isUserLoggedIn);
   function login(userToken) {
     setToken(userToken);
   }

@@ -6,21 +6,16 @@ import { useContext } from 'react';
 import { AuthContext } from '../../store/authContext';
 
 const initValues = {
-  email: '',
-  password: '',
+  email: 'eve.holt@reqres.in',
+  password: '12345',
 };
 function LoginForm() {
   const { login } = useContext(AuthContext);
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
-      email: Yup.string()
-        .email('Patikrinkite savo email')
-        .required(),
-      password: Yup.string()
-        .min(4, 'Maziausiai 4 simboliai')
-        .max(7)
-        .required(),
+      email: Yup.string().email('Patikrinkite savo email').required(),
+      password: Yup.string().min(4, 'Maziausiai 4 simboliai').max(7).required(),
     }),
     onSubmit: async (values) => {
       // fetch or axios https://reqres.in/api/login
@@ -38,7 +33,7 @@ function LoginForm() {
     },
   });
 
-  console.log('formik.touched ===', formik.touched);
+  // console.log('formik.touched ===', formik.touched);
   // console.log('formik.values ===', formik.values);
 
   return (
