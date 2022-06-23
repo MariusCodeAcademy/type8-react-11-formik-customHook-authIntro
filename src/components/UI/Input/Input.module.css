@@ -1,0 +1,32 @@
+.input {
+  display: block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 0.4em 0.8em;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 4px;
+}
+
+.txa {
+  height: 100px;
+  width: 200px;
+  resize: vertical;
+}
+
+.dark {
+  background-color: #333;
+  color: white;
+}
+.dark::placeholder {
+  color: white;
+}
+
+.errorMsg {
+  /* background-color: rgb(104, 8, 8); */
+  color: tomato;
+  margin-top: 5px;
+}
+.input.errField {
+  background-color: rgb(247, 139, 120);
+  border-color: red;
+}
