@@ -5,6 +5,7 @@ import { myFetch } from '../../utils';
 import { useContext } from 'react';
 import { AuthContext } from '../../store/authContext';
 import Input from './../UI/Input/Input';
+import Button from './../UI/Button/Button';
 
 const initValues = {
   email: 'eve.holt@reqres.in',
@@ -60,7 +61,9 @@ function LoginForm(props) {
         placeholder='Your password'
       />
 
-      <button type='submit'>Login</button>
+      <Button variant='danger' type='submit'>
+        Login
+      </Button>
     </form>
   );
 }
